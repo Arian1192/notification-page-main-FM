@@ -13,3 +13,11 @@ markAsRead.addEventListener("click", () => {
     });
     Message.textContent = "0";
 });
+
+postsNotRead.forEach((post) => {
+    post.addEventListener("click", () => {
+        post.classList.replace("containerPostUnread", "containerPostRead");
+        Message.textContent = parseInt(Message.textContent) - 1;
+        post.querySelector(".redIcon").classList.remove("redIcon");
+    });
+});
